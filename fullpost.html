@@ -1,0 +1,296 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Curra Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#f9f9f9] text-[#1f2937]">
+    <header class="w-full border-b border-gray-200">
+      <div
+        class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between h-16"
+      >
+        <a class="flex items-center space-x-2" href="home.html">
+          <img
+            alt="Curra logo"
+            class="w-26 h-8"
+            height="38"
+            src="Group 18.png"
+            width="80"
+          />
+        </a>
+        <nav
+          class="hidden md:flex items-center space-x-8 text-sm font-normal text-gray-700"
+        >
+          <a class="text-[#1B5E57] hover:text-[#15433E]" href="blog page.php"
+            >Blog</a
+          >
+          <a class="hover:text-gray-900" href="aboutus.html"> About </a>
+          <a href="contact us.html">
+            <button
+              class="bg-[#1B5E57] hover:bg-[#15433E] text-white text-sm font-semibold px-5 py-2 rounded-md focus:outline-none"
+            >
+              Contact Us
+            </button>
+          </a>
+        </nav>
+        <button
+          aria-label="Open menu"
+          class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none"
+        >
+          <i class="fas fa-bars"> </i>
+        </button>
+      </div>
+    </header>
+    <!-- Main content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <section>
+        <!-- Category & Date -->
+        <div class="flex items-center space-x-4 text-xs text-gray-500 mb-2">
+          <span
+            id="post-category"
+            class="uppercase font-semibold tracking-widest"
+          ></span>
+          <span id="post-date"></span>
+        </div>
+
+        <!-- Title -->
+        <h1
+          id="post-title"
+          class="text-2xl sm:text-3xl font-extrabold text-[#111827] leading-tight mb-6"
+        ></h1>
+
+        <!-- First Image -->
+        <img
+          id="post-image1"
+          class="w-1/2 rounded-xl mb-8 object-cover"
+          alt="Post image"
+        />
+
+        <!-- Intro -->
+        <p
+          id="intro-content"
+          class="text-xs text-gray-600 mb-6 leading-relaxed"
+        ></p>
+
+        <!-- Content 1 -->
+        <p id="content1" class="text-xs text-gray-600 mb-6 leading-relaxed"></p>
+
+        <!-- Quote -->
+        <blockquote
+          class="border-l-4 border-[#1b5e57] pl-4 italic text-gray-500 mb-6"
+        >
+          <p id="quote" class="mb-2"></p>
+          <footer
+            id="quote-author"
+            class="font-semibold text-xs text-gray-700"
+          ></footer>
+        </blockquote>
+
+        <!-- Main Content -->
+        <p
+          id="main-content"
+          class="text-xs text-gray-600 mb-6 leading-relaxed"
+        ></p>
+
+        <!-- Second Image -->
+        <img
+          id="post-image2"
+          class="w-1/2 rounded-xl mb-6 object-cover"
+          alt="Post image"
+        />
+
+        <!-- Final Content -->
+        <p id="final-content" class="text-xs text-gray-600 leading-relaxed"></p>
+      </section>
+    </main>
+
+    <!-- Newsletter Section -->
+    <section
+      class="relative overflow-hidden py-16 px-6 sm:px-12 text-center text-white"
+      style="background-color: #1b5e57"
+    >
+      <img
+        alt="Decorative white wave pattern background top left"
+        aria-hidden="true"
+        class="absolute top-0 left-0 w-48 h-48 opacity-20 pointer-events-none select-none"
+        height="600"
+        src="https://storage.googleapis.com/a1aa/image/2217eb65-f12b-44e3-025a-71c016c96622.jpg"
+        width="600"
+      />
+      <img
+        alt="Decorative white wave pattern background bottom right"
+        aria-hidden="true"
+        class="absolute bottom-0 right-0 w-48 h-48 opacity-20 pointer-events-none select-none"
+        height="600"
+        src="https://storage.googleapis.com/a1aa/image/166a2def-ba6c-42e5-5221-2e3cb2c8f13b.jpg"
+        width="600"
+      />
+      <h2
+        class="text-2xl sm:text-3xl font-extrabold max-w-xl mx-auto leading-tight mb-6"
+      >
+        Get our stories delivered From us to your inbox weekly.
+      </h2>
+      <form id="newsletterForm" class="flex max-w-md mx-auto space-x-2">
+        <input
+          class="rounded-md px-4 py-2 text-gray-900 text-sm w-full max-w-xs focus:outline-none"
+          name="email"
+          placeholder="Your Email"
+          id="newsletterEmail"
+          required=""
+          type="email"
+        />
+        <button
+          class="rounded-md px-4 py-2 text-sm font-semibold"
+          type="submit"
+          style="background-color: #154842"
+        >
+          Get started
+        </button>
+      </form>
+      <p id="newsletterMessage" class="text-xs mt-3 max-w-xs mx-auto"></p>
+      <p
+        class="text-xs mt-4 max-w-xs mx-auto leading-tight"
+        style="color: #a6d1cb"
+      >
+        Get a response tomorrow if you submit by 9pm today. If we received after
+        9pm will get a reponse the following day.
+      </p>
+    </section>
+
+    <footer
+      class="border-t border-[#1B5E57] py-10 px-6 sm:px-12 max-w-7xl mx-auto text-center text-[#1B5E57]"
+    >
+      <a
+        class="inline-flex items-center space-x-2 mb-6 justify-center"
+        href="#"
+      >
+        <img
+          src="Group 18.png"
+          alt="Curra logo"
+          class="w-20 h-8"
+          width="44"
+          height="32"
+        />
+      </a>
+
+      <nav class="flex justify-center space-x-10 text-xs mb-6 text-black">
+        <a class="hover:text-[#1B5E57]" href="home.html">Home</a>
+        <a class="hover:text-[#1B5E57]" href="allblog.html">Blog</a>
+        <a class="hover:text-[#1B5E57]" href="aboutus.html">About</a>
+        <a class="hover:text-[#1B5E57]" href="contact us.html">Contact Us</a>
+      </nav>
+
+      <div class="flex justify-center space-x-4 mb-6">
+        <a href="#" aria-label="Facebook" class="hover:text-[#14514A]">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" aria-label="Twitter" class="hover:text-[#14514A]">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-[#14514A]">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" aria-label="GitHub" class="hover:text-[#14514A]">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p class="text-xs text-black/70">
+        Copyright Curra 2023. All Right Reserved
+      </p>
+    </footer>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const postId = params.get("id");
+
+      async function loadPost() {
+        try {
+          const res = await fetch(`http://127.0.0.1:8000/posts/${postId}`);
+          if (!res.ok) throw new Error("Post not found");
+          const post = await res.json();
+
+          // Fill values
+          document.getElementById("post-category").textContent = post.category;
+          document.getElementById("post-date").textContent = new Date(
+            post.created_at
+          ).toDateString();
+          document.getElementById("post-title").textContent = post.title;
+
+          if (post.image1)
+            document.getElementById("post-image1").src = post.image1;
+          if (post.image2)
+            document.getElementById("post-image2").src = post.image2;
+
+          document.getElementById("intro-content").textContent =
+            post.intro_content || "";
+          document.getElementById("content1").textContent = post.content1 || "";
+          document.getElementById("quote").textContent = post.quote || "";
+          document.getElementById("quote-author").textContent =
+            post.quote_author || "";
+          document.getElementById("main-content").textContent =
+            post.main_content || "";
+          document.getElementById("final-content").textContent =
+            post.final_content || "";
+        } catch (err) {
+          console.error(err);
+          document.querySelector(
+            "main"
+          ).innerHTML = `<p class="text-red-600">Error loading post.</p>`;
+        }
+      }
+
+      loadPost();
+    </script>
+    <script>
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const email = document.getElementById("newsletterEmail").value.trim();
+          const msgEl = document.getElementById("newsletterMessage");
+
+          msgEl.innerText = "";
+          msgEl.className = "text-xs mt-3 max-w-xs mx-auto";
+
+          try {
+            const res = await fetch("http://127.0.0.1:8000/subscribe/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email }),
+            });
+
+            if (res.ok) {
+              msgEl.innerText = "✅ You’re subscribed!";
+              msgEl.classList.add("text-green-400", "font-semibold");
+              document.getElementById("newsletterForm").reset();
+            } else {
+              const error = await res.json();
+              msgEl.innerText = "❌ Subscription failed. Try again.";
+              msgEl.classList.add("text-red-400", "font-semibold");
+              console.error("Error:", error);
+            }
+          } catch (err) {
+            msgEl.innerText = "⚠️ Network error. Please try later.";
+            msgEl.classList.add("text-red-400", "font-semibold");
+            console.error("Request failed:", err);
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,265 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Curra Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Header -->
+    <header class="w-full border-b border-gray-200">
+      <div
+        class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex items-center justify-between h-16"
+      >
+        <a class="flex items-center space-x-2" href="#">
+          <img
+            alt="Curra logo"
+            class="w-26 h-8"
+            height="38"
+            src="Group 18.png"
+            width="80"
+          />
+        </a>
+        <nav
+          class="hidden md:flex items-center space-x-8 text-sm font-normal text-gray-700"
+        >
+          <a class="text-[#1B5E57] hover:text-[#15433E]" href="allblog.html">
+            Blog
+          </a>
+          <a class="hover:text-gray-900" href="aboutus.html"> About </a>
+          <a href="contact us.html">
+            <button
+              class="bg-[#1B5E57] hover:bg-[#15433E] text-white text-sm font-semibold px-5 py-2 rounded-md focus:outline-none"
+            >
+              Contact Us
+            </button>
+          </a>
+        </nav>
+        <button
+          aria-label="Open menu"
+          class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none"
+        >
+          <i class="fas fa-bars"> </i>
+        </button>
+      </div>
+    </header>
+    <!-- Main content -->
+    <main class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mt-16 mb-20">
+      <section class="text-center max-w-3xl mx-auto mb-16 px-4 sm:px-0">
+        <p class="text-xs text-gray-500 uppercase tracking-widest mb-2">
+          Our Blogs
+        </p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-[#1B5E57] mb-3">
+          Find our all blogs from here
+        </h1>
+        <p class="text-xs text-gray-600 leading-tight">
+          our blogs are written from very research research and well known
+          writers writers so that we can provide you the best blogs and articles
+          articles for you to read them all along
+        </p>
+      </section>
+      <!-- Blog grid -->
+      <section
+        id="blogGrid"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <!-- Posts will be inserted here -->
+      </section>
+    </main>
+    <!-- Newsletter section -->
+    <section
+      class="relative overflow-hidden py-16 px-6 sm:px-12 text-center text-white"
+      style="background-color: #1b5e57"
+    >
+      <img
+        alt="Decorative white wave pattern background top left"
+        aria-hidden="true"
+        class="absolute top-0 left-0 w-48 h-48 opacity-20 pointer-events-none select-none"
+        height="600"
+        src="https://storage.googleapis.com/a1aa/image/2217eb65-f12b-44e3-025a-71c016c96622.jpg"
+        width="600"
+      />
+      <img
+        alt="Decorative white wave pattern background bottom right"
+        aria-hidden="true"
+        class="absolute bottom-0 right-0 w-48 h-48 opacity-20 pointer-events-none select-none"
+        height="600"
+        src="https://storage.googleapis.com/a1aa/image/166a2def-ba6c-42e5-5221-2e3cb2c8f13b.jpg"
+        width="600"
+      />
+      <h2
+        class="text-2xl sm:text-3xl font-extrabold max-w-xl mx-auto leading-tight mb-6"
+      >
+        Get our stories delivered From us to your inbox weekly.
+      </h2>
+      <form id="newsletterForm" class="flex max-w-md mx-auto space-x-2">
+        <input
+          class="rounded-md px-4 py-2 text-gray-900 text-sm w-full max-w-xs focus:outline-none"
+          name="email"
+          placeholder="Your Email"
+          required=""
+          id="newsletterEmail"
+          type="email"
+        />
+        <button
+          class="rounded-md px-4 py-2 text-sm font-semibold"
+          type="submit"
+          style="background-color: #154842"
+        >
+          Get started
+        </button>
+      </form>
+      <p id="newsletterMessage" class="text-xs mt-3 max-w-xs mx-auto"></p>
+      <p
+        class="text-xs mt-4 max-w-xs mx-auto leading-tight"
+        style="color: #a6d1cb"
+      >
+        Get a response tomorrow if you submit by 9pm today. If we received after
+        9pm will get a reponse the following day.
+      </p>
+    </section>
+
+    <footer
+      class="border-t border-[#1B5E57] py-10 px-6 sm:px-12 max-w-7xl mx-auto text-center text-[#1B5E57]"
+    >
+      <a
+        class="inline-flex items-center space-x-2 mb-6 justify-center"
+        href="#"
+      >
+        <img
+          src="Group 18.png"
+          alt="Curra logo"
+          class="w-20 h-8"
+          width="44"
+          height="32"
+        />
+      </a>
+
+      <nav class="flex justify-center space-x-10 text-xs mb-6 text-black">
+        <a class="hover:text-[#1B5E57]" href="home.html">Home</a>
+        <a class="hover:text-[#1B5E57]" href="allblog.html">Blog</a>
+        <a class="hover:text-[#1B5E57]" href="aboutus.html">About</a>
+        <a class="hover:text-[#1B5E57]" href="contact us.html">Contact Us</a>
+      </nav>
+
+      <div class="flex justify-center space-x-4 mb-6">
+        <a href="#" aria-label="Facebook" class="hover:text-[#14514A]">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" aria-label="Twitter" class="hover:text-[#14514A]">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="hover:text-[#14514A]">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" aria-label="GitHub" class="hover:text-[#14514A]">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <p class="text-xs text-black/70">
+        Copyright Curra 2023. All Right Reserved
+      </p>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", async () => {
+        const blogGrid = document.getElementById("blogGrid");
+
+        try {
+          const res = await fetch("http://127.0.0.1:8000/posts/");
+          if (!res.ok) throw new Error("Failed to fetch posts");
+
+          const posts = await res.json();
+
+          if (posts.length === 0) {
+            blogGrid.innerHTML = `<p class="text-center text-gray-500 col-span-3">No blog posts available.</p>`;
+            return;
+          }
+
+          blogGrid.innerHTML = posts
+            .map(
+              (post) => `
+          <article class="bg-white rounded-lg shadow-md overflow-hidden">
+            <img src="${post.image1 || "placeholder.jpg"}" alt="${
+                post.title
+              }" class="w-full h-40 object-cover" />
+            <div class="p-4">
+              <div class="text-xs text-gray-500 uppercase font-semibold mb-1 select-none">
+                ${post.category} | ${new Date(
+                post.created_at
+              ).toLocaleDateString()}
+              </div>
+              <h4 class="font-semibold mb-2 leading-tight">${post.title}</h4>
+              <p class="text-xs text-gray-700 mb-4 leading-relaxed">
+                ${post.intro_content || ""}
+              </p>
+              <a href="fullpost.html?id=${post.id}">
+                <button
+                  class="text-[#1B5E57] text-xs font-semibold border border-[#1B5E57] rounded px-4 py-1 hover:bg-[#e6f1f0] transition"
+                >
+                  Read More
+                </button>
+              </a>
+            </div>
+          </article>
+        `
+            )
+            .join("");
+        } catch (err) {
+          console.error(err);
+          blogGrid.innerHTML = `<p class="text-center text-red-500 col-span-3">❌ Failed to load blogs.</p>`;
+        }
+      });
+    </script>
+    <script>
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const email = document.getElementById("newsletterEmail").value.trim();
+          const msgEl = document.getElementById("newsletterMessage");
+
+          msgEl.innerText = "";
+          msgEl.className = "text-xs mt-3 max-w-xs mx-auto";
+
+          try {
+            const res = await fetch("http://127.0.0.1:8000/subscribe/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email }),
+            });
+
+            if (res.ok) {
+              msgEl.innerText = "✅ You’re subscribed!";
+              msgEl.classList.add("text-green-400", "font-semibold");
+              document.getElementById("newsletterForm").reset();
+            } else {
+              const error = await res.json();
+              msgEl.innerText = "❌ Subscription failed. Try again.";
+              msgEl.classList.add("text-red-400", "font-semibold");
+              console.error("Error:", error);
+            }
+          } catch (err) {
+            msgEl.innerText = "⚠️ Network error. Please try later.";
+            msgEl.classList.add("text-red-400", "font-semibold");
+            console.error("Request failed:", err);
+          }
+        });
+    </script>
+  </body>
+</html>

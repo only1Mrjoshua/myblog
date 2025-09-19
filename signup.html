@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100 font-sans">
+    <div class="min-h-screen flex items-center justify-center px-4">
+      <div class="bg-white shadow-lg rounded-lg w-full max-w-md p-8">
+        <h2 class="text-2xl font-bold text-center text-[#1B5E57] mb-6">
+          Create Account
+        </h2>
+
+        <form class="space-y-4" id="signupForm">
+          <div>
+            <label class="block text-sm font-medium text-gray-700"
+              >UserName</label
+            >
+            <input
+              type="text"
+              id="username"
+              placeholder="Username"
+              required
+              class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+              class="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+            />
+          </div>
+
+          <button
+            type="submit"
+            id="signupBtn"
+            class="w-full bg-[#1B5E57] text-white py-2 rounded-lg hover:bg-[#154C47] transition"
+          >
+            Sign Up
+          </button>
+        </form>
+        <p class="text-sm text-center text-gray-600 mt-4">
+          Already have an account?
+          <a href="signin.html" class="text-[#1B5E57] hover:underline"
+            >Sign In</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <p id="message"></p>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("signupForm");
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault(); // ✅ prevent page reload
+
+          const username = document.getElementById("username").value;
+          const password = document.getElementById("password").value;
+
+          try {
+            const response = await fetch("http://localhost:8000/auth/", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ username, password }),
+            });
+
+            if (response.ok) {
+              document.getElementById("message").innerText = "✅ User created!";
+              // ✅ redirect to sign-in page after success
+              setTimeout(() => {
+                window.location.href = "signin.html"; // change path if needed
+              }, 1500);
+            } else {
+              const data = await response.json();
+              document.getElementById("message").innerText =
+                "❌ Error: " + (data.detail || JSON.stringify(data));
+            }
+          } catch (error) {
+            document.getElementById("message").innerText =
+              "⚠️ Network error: " + error.message;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

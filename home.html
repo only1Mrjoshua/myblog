@@ -1,0 +1,331 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Curra Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        window.location.href = "signin.html";
+      }
+    </script>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+      <div class="flex items-center space-x-2">
+        <img
+          alt="Curra logo, stylized letter C in deep teal green"
+          class="w-26 h-8"
+          height="38"
+          src="Group 18.png"
+          width="80"
+        />
+      </div>
+      <ul class="hidden sm:flex space-x-8 text-sm font-medium text-gray-700">
+        <li>
+          <a class="hover:text-[#1B5E57]" href="allblog.html"> Blog </a>
+        </li>
+        <li>
+          <a class="hover:text-[#1B5E57]" href="aboutus.html"> About </a>
+        </li>
+      </ul>
+      <ul
+        class="hidden sm:flex justify-center items-center space-x-8 text-sm font-medium text-gray-700"
+      >
+        <li>
+          <a href="contact us.html">
+            <button
+              class="hidden sm:inline-block bg-[#1B5E57] text-white text-sm font-semibold px-5 py-2 rounded-md hover:bg-[#154c47] transition"
+            >
+              Contact Us
+            </button>
+          </a>
+        </li>
+        <li>
+          <a id="logoutBtn" class="hover:text-[#1B5E57]" href="signin.html"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <section class="bg-[#1B5E57] relative overflow-hidden">
+      <div
+        class="max-w-7xl mx-auto px-6 py-16 sm:py-24 sm:px-12 flex flex-col sm:flex-row sm:items-center sm:justify-between relative z-10"
+      >
+        <div class="max-w-xl text-white">
+          <h1
+            class="text-3xl sm:text-4xl font-bold leading-tight mb-4 text-white"
+          >
+            How AI will
+            <br />
+            Change the Future
+          </h1>
+          <p
+            class="text-xs sm:text-sm font-light mb-6 leading-relaxed max-w-md text-white/90"
+          >
+            The future of AI will see more robots having general artificial
+            intelligence, improved capabilities, and becoming more personal and
+            potentially safe. For example, home robots will overcome navigation
+            &amp; detection.
+          </p>
+        </div>
+      </div>
+      <svg
+        aria-hidden="true"
+        class="absolute top-0 left-0 w-full h-full pointer-events-none"
+        fill="none"
+        viewBox="0 0 1440 320"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="wavePattern"
+            x="0"
+            y="0"
+            width="40"
+            height="40"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M0 20 Q10 0 20 20 T40 20"
+              fill="none"
+              stroke="rgba(255,255,255,0.25)"
+              stroke-width="1"
+            ></path>
+          </pattern>
+        </defs>
+        <rect width="1440" height="320" fill="url(#wavePattern)"></rect>
+      </svg>
+      <img
+        alt="Futuristic AI icon styled with deep teal theme on a glowing hexagonal grid background"
+        class="w-full max-w-md rounded-lg mx-auto sm:mx-0 sm:absolute sm:right-12 sm:top-1/2 sm:-translate-y-1/2"
+        height="400"
+        src="back.jpg"
+        width="600"
+      />
+    </section>
+
+    <!-- Posts -->
+    <section class="max-w-7xl mx-auto px-6 pb-12 mt-12">
+      <div class="flex items-center justify-between mb-6">
+        <h3 class="text-lg font-semibold">Our Recent Post</h3>
+        <a href="allblog.html">
+          <button
+            class="bg-[#1B5E57] text-white text-xs font-semibold px-4 py-1 rounded hover:bg-[#154c47] transition"
+          >
+            View All
+          </button>
+        </a>
+      </div>
+
+      <div
+        id="recentPosts"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      ></div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="bg-[#1B5E57] text-white py-16 relative overflow-hidden">
+      <svg
+        aria-hidden="true"
+        class="absolute top-0 left-0 w-full h-full pointer-events-none"
+        fill="none"
+        viewBox="0 0 1440 320"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <pattern
+            id="wavePattern2"
+            x="0"
+            y="0"
+            width="40"
+            height="40"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M0 20 Q10 0 20 20 T40 20"
+              fill="none"
+              stroke="rgba(255 255 255 / 0.15)"
+              stroke-width="1"
+            ></path>
+          </pattern>
+        </defs>
+        <rect width="1440" height="320" fill="url(#wavePattern2)"></rect>
+      </svg>
+      <div class="max-w-3xl mx-auto px-6 relative z-10 text-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold mb-6 leading-snug">
+          Get our stories delivered From us to your inbox weekly.
+        </h2>
+        <form
+          id="newsletterForm"
+          class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xl mx-auto"
+        >
+          <input
+            type="email"
+            id="newsletterEmail"
+            name="email"
+            required
+            placeholder="Your Email"
+            class="w-full sm:flex-1 rounded-md px-4 py-2 text-[#1B5E57] focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          />
+          <button
+            type="submit"
+            class="bg-white text-[#1B5E57] font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition w-full sm:w-auto"
+          >
+            Get started
+          </button>
+        </form>
+        <p id="newsletterMessage" class="text-xs mt-3 max-w-xs mx-auto"></p>
+        <p class="text-xs mt-3 text-gray-200 max-w-xs mx-auto">
+          Get exclusive promotions if you subscribe. Only 1 email daily. If you
+          want to unsubscribe, you can do it following links.
+        </p>
+      </div>
+    </section>
+
+    <footer class="bg-[#1B5E57] text-white py-10">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col items-center space-y-6">
+        <div class="flex items-center space-x-2">
+          <img
+            src="Group 19.png"
+            alt="Curra logo"
+            class="w-20 h-8"
+            width="44"
+            height="32"
+          />
+        </div>
+        <nav class="flex space-x-8 text-sm font-light">
+          <a href="home.html" class="hover:text-gray-300"> Home </a>
+          <a href="allblog.html" class="hover:text-gray-300"> Blog </a>
+          <a href="aboutus.html" class="hover:text-gray-300"> About </a>
+          <a href="contact us.html" class="hover:text-gray-300"> Contact Us </a>
+        </nav>
+        <div class="flex space-x-6 text-lg">
+          <a href="#" aria-label="Facebook" class="hover:text-gray-300">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="Twitter" class="hover:text-gray-300">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="hover:text-gray-300">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" aria-label="GitHub" class="hover:text-gray-300">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <p class="text-xs font-light select-none">
+          Copyright Curra © 2023 All Right Reserved
+        </p>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .getElementById("logoutBtn")
+          .addEventListener("click", function (e) {
+            e.preventDefault(); // stop direct navigation
+
+            // Clear tokens
+            localStorage.removeItem("token");
+            sessionStorage.clear();
+
+            // Redirect manually
+            window.location.href = "signin.html";
+          });
+      });
+    </script>
+    <script>
+      async function loadRecentPosts() {
+        const res = await fetch("http://127.0.0.1:8000/posts/recent"); // FastAPI endpoint
+        const posts = await res.json();
+
+        const container = document.getElementById("recentPosts");
+        container.innerHTML = "";
+
+        posts.forEach((post) => {
+          const card = `
+        <article class="bg-white rounded-lg shadow-md overflow-hidden">
+          <img src="${
+            post.image1 || "default.jpg"
+          }" class="w-full h-40 object-cover"/>
+          <div class="p-4">
+            <div class="text-xs text-gray-500 mb-1">
+              ${post.category} | ${new Date(post.created_at).toDateString()}
+            </div>
+            <h4 class="font-semibold mb-2">${post.title}</h4>
+            <p class="text-xs text-gray-700 mb-4">${
+              post.intro_content?.substring(0, 80) || ""
+            }...</p>
+            <a href="fullpost.html?id=${post.id}">
+              <button class="text-[#1B5E57] text-xs font-semibold border border-[#1B5E57] rounded px-4 py-1 hover:bg-[#e6f1f0] transition">
+                Read More
+              </button>
+            </a>
+          </div>
+        </article>
+      `;
+          container.insertAdjacentHTML("beforeend", card);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", loadRecentPosts);
+    </script>
+    <script>
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const email = document.getElementById("newsletterEmail").value.trim();
+          const msgEl = document.getElementById("newsletterMessage");
+
+          msgEl.innerText = "";
+          msgEl.className = "text-xs mt-3 max-w-xs mx-auto";
+
+          try {
+            const res = await fetch("http://127.0.0.1:8000/subscribe/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email }),
+            });
+
+            if (res.ok) {
+              msgEl.innerText = "✅ You’re subscribed!";
+              msgEl.classList.add("text-green-400", "font-semibold");
+              document.getElementById("newsletterForm").reset();
+            } else {
+              const error = await res.json();
+              msgEl.innerText = "❌ Subscription failed. Try again.";
+              msgEl.classList.add("text-red-400", "font-semibold");
+              console.error("Error:", error);
+            }
+          } catch (err) {
+            msgEl.innerText = "⚠️ Network error. Please try later.";
+            msgEl.classList.add("text-red-400", "font-semibold");
+            console.error("Request failed:", err);
+          }
+        });
+    </script>
+  </body>
+</html>

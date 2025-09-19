@@ -1,0 +1,366 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Zarrin Contact Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-[#fafafa] text-gray-900">
+    <!-- Header -->
+    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+      <div class="flex items-center space-x-2">
+        <img
+          alt="Curra logo, stylized letter C in deep teal green"
+          class="w-26 h-8"
+          height="38"
+          src="Group 18.png"
+          width="80"
+        />
+      </div>
+      <ul class="hidden sm:flex space-x-8 text-sm font-medium text-gray-700">
+        <li>
+          <a class="hover:text-[#1B5E57]" href="allblog.html"> Blog </a>
+        </li>
+        <li>
+          <a class="hover:text-[#1B5E57]" href="aboutus.html"> About </a>
+        </li>
+      </ul>
+      <a href="contact us.html">
+        <button
+          class="hidden sm:inline-block bg-[#1B5E57] text-white text-sm font-semibold px-5 py-2 rounded-md hover:bg-[#154c47] transition"
+        >
+          Contact Us
+        </button>
+      </a>
+    </nav>
+    <main class="max-w-7xl mx-auto px-6 sm:px-10 mt-16 mb-24">
+      <section class="text-center max-w-2xl mx-auto">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-[#1B5E57]">
+          Get in Touch
+        </h1>
+        <p class="mt-2 text-gray-500 text-sm sm:text-base">
+          Contact us to publish your content and show ads to our website and get
+          a good reach.
+        </p>
+      </section>
+      <section
+        aria-label="Contact info cards"
+        class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto"
+      >
+        <article
+          class="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center space-y-3"
+        >
+          <div
+            class="bg-[#1B5E57] text-white w-12 h-12 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-home"></i>
+          </div>
+          <h3 class="text-[#1B5E57] font-semibold text-sm">Office</h3>
+          <p class="text-gray-500 text-xs text-center">
+            Alakahia, Port Harcourt, Nigeria.
+          </p>
+        </article>
+        <article
+          class="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center space-y-3"
+        >
+          <div
+            class="bg-[#1B5E57] text-white w-12 h-12 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h3 class="text-[#1B5E57] font-semibold text-sm">Email</h3>
+          <p class="text-gray-500 text-xs text-center">
+            sorochijoshua@gmail.com
+          </p>
+        </article>
+        <article
+          class="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center space-y-3"
+        >
+          <div
+            class="bg-[#1B5E57] text-white w-12 h-12 rounded-full flex items-center justify-center"
+          >
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h3 class="text-[#1B5E57] font-semibold text-sm">Phone</h3>
+          <p class="text-gray-500 text-xs text-center">+2349063229518</p>
+        </article>
+      </section>
+      <section
+        class="mt-16 max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8"
+        id="contact-form"
+      >
+        <form
+          id="contactForm"
+          class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4"
+        >
+          <div>
+            <label
+              class="block text-xs font-semibold text-gray-700 mb-1"
+              for="name"
+            >
+              Name
+            </label>
+            <input
+              class="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              id="name"
+              name="name"
+              type="text"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-xs font-semibold text-gray-700 mb-1"
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              class="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              id="email"
+              name="email"
+              type="email"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-xs font-semibold text-gray-700 mb-1"
+              for="phone"
+            >
+              Phone
+            </label>
+            <input
+              class="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              id="phone"
+              name="phone"
+              type="tel"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-xs font-semibold text-gray-700 mb-1"
+              for="subject"
+            >
+              Subject
+            </label>
+            <input
+              class="w-full rounded border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              id="subject"
+              name="subject"
+              type="text"
+            />
+          </div>
+          <div class="sm:col-span-2">
+            <label
+              class="block text-xs font-semibold text-gray-700 mb-1"
+              for="message"
+            >
+              Message
+            </label>
+            <textarea
+              class="w-full rounded border border-gray-300 px-3 py-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
+              id="message"
+              name="message"
+              rows="5"
+            ></textarea>
+          </div>
+          <div class="sm:col-span-2 flex justify-center">
+            <button
+              class="bg-[#1B5E57] hover:bg-[#144743] text-white text-xs font-semibold rounded-md px-6 py-2 transition-colors duration-200"
+              type="submit"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+        <p id="formMessage" class="text-center text-sm mt-3"></p>
+      </section>
+    </main>
+
+    <section
+      class="relative overflow-hidden py-16 px-6 sm:px-12 text-center text-white"
+      style="background-color: #1b5e57"
+    >
+      <img
+        alt="Decorative white wave pattern background top left"
+        aria-hidden="true"
+        class="absolute top-0 left-0 w-48 h-48 opacity-20 pointer-events-none select-none"
+        height="600"
+        src="https://storage.googleapis.com/a1aa/image/2217eb65-f12b-44e3-025a-71c016c96622.jpg"
+        width="600"
+      />
+      <img
+        alt="Decorative white wave pattern background bottom right"
+        aria-hidden="true"
+        class="absolute bottom-0 right-0 w-48 h-48 opacity-20 pointer-events-none select-none"
+        height="600"
+        src="https://storage.googleapis.com/a1aa/image/166a2def-ba6c-42e5-5221-2e3cb2c8f13b.jpg"
+        width="600"
+      />
+      <h2
+        class="text-2xl sm:text-3xl font-extrabold max-w-xl mx-auto leading-tight mb-6"
+      >
+        Get our stories delivered From us to your inbox weekly.
+      </h2>
+      <form id="newsletterForm" class="flex max-w-md mx-auto space-x-2">
+        <input
+          class="rounded-md px-4 py-2 text-gray-900 text-sm w-full max-w-xs focus:outline-none"
+          name="email"
+          id="newsletterEmail"
+          placeholder="Your Email"
+          required=""
+          type="email"
+        />
+        <button
+          class="rounded-md px-4 py-2 text-sm font-semibold"
+          type="submit"
+          style="background-color: #154842"
+        >
+          Get started
+        </button>
+      </form>
+      <p id="newsletterMessage" class="text-xs mt-3 max-w-xs mx-auto"></p>
+      <p
+        class="text-xs mt-4 max-w-xs mx-auto leading-tight"
+        style="color: #a6d1cb"
+      >
+        Get a response tomorrow if you submit by 9pm today. If we received after
+        9pm will get a reponse the following day.
+      </p>
+    </section>
+
+    <footer class="bg-white py-12 px-6 sm:px-12">
+      <div class="max-w-7xl mx-auto flex flex-col items-center space-y-6">
+        <div class="flex items-center space-x-2">
+          <img
+            src="Group 18.png"
+            alt="Curra logo"
+            class="w-20 h-8"
+            width="44"
+            height="32"
+          />
+        </div>
+        <nav class="flex space-x-10 text-sm font-normal text-black">
+          <a class="hover:text-[#1B5E57]" href="home.html">Home</a>
+          <a class="hover:text-[#1B5E57]" href="allblog.html">Blog</a>
+          <a class="hover:text-[#1B5E57]" href="aboutus.html">About</a>
+          <a class="hover:text-[#1B5E57]" href="contact us.html">Contact Us</a>
+        </nav>
+        <div class="flex space-x-4 text-[#1B5E57]">
+          <a href="#" aria-label="Facebook" class="hover:text-black">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" aria-label="Twitter" class="hover:text-black">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="hover:text-black">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" aria-label="GitHub" class="hover:text-black">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <hr class="border-[#1B5E57]/50 w-full max-w-4xl" />
+        <p class="text-xs text-center text-black max-w-4xl">
+          Copyright Curra © 2023. All Right Reserved
+        </p>
+      </div>
+    </footer>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const msgEl = document.getElementById("formMessage");
+          msgEl.innerText = ""; // clear old messages
+          msgEl.className = "text-center text-sm mt-3"; // reset classes
+
+          const formData = {
+            name: document.getElementById("name").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            phone: document.getElementById("phone").value.trim(),
+            subject: document.getElementById("subject").value.trim(),
+            message: document.getElementById("message").value.trim(),
+          };
+
+          try {
+            const res = await fetch("http://127.0.0.1:8000/contact/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            });
+
+            const msgEl = document.getElementById("formMessage");
+
+            if (res.ok) {
+              msgEl.innerText = "✅ Message sent!";
+              msgEl.classList.add("text-green-600", "font-semibold");
+              document.getElementById("contactForm").reset();
+            } else {
+              const error = await res.json();
+              msgEl.innerText = "❌ Failed to send message.";
+              msgEl.classList.add("text-red-600", "font-semibold");
+              console.error("Error:", error);
+            }
+          } catch (err) {
+            msgEl.innerText = "⚠️ Something went wrong. Try again later.";
+            msgEl.classList.add("text-red-600", "font-semibold");
+            console.error("Request failed:", err);
+          }
+        });
+    </script>
+    <script>
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const email = document.getElementById("newsletterEmail").value.trim();
+          const msgEl = document.getElementById("newsletterMessage");
+
+          msgEl.innerText = "";
+          msgEl.className = "text-xs mt-3 max-w-xs mx-auto";
+
+          try {
+            const res = await fetch("http://127.0.0.1:8000/subscribe/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email }),
+            });
+
+            if (res.ok) {
+              msgEl.innerText = "✅ You’re subscribed!";
+              msgEl.classList.add("text-green-400", "font-semibold");
+              document.getElementById("newsletterForm").reset();
+            } else {
+              const error = await res.json();
+              msgEl.innerText = "❌ Subscription failed. Try again.";
+              msgEl.classList.add("text-red-400", "font-semibold");
+              console.error("Error:", error);
+            }
+          } catch (err) {
+            msgEl.innerText = "⚠️ Network error. Please try later.";
+            msgEl.classList.add("text-red-400", "font-semibold");
+            console.error("Request failed:", err);
+          }
+        });
+    </script>
+  </body>
+</html>

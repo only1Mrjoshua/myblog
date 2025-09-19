@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Add New Post</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      const token = localStorage.getItem("token");
+
+      if (!token) {
+        window.location.href = "signin.html";
+      } else {
+        function parseJwt(token) {
+          try {
+            return JSON.parse(atob(token.split(".")[1]));
+          } catch (e) {
+            return null;
+          }
+        }
+
+        const payload = parseJwt(token);
+
+        if (!payload || payload.role !== "admin") {
+          // Not an admin → kick back to home
+          window.location.href = "home.html";
+        }
+      }
+    </script>
+  </head>
+
+  <body class="bg-gray-50 text-gray-900">
+    <div class="max-w-3xl mx-auto p-6 mt-10 bg-white rounded-xl shadow-md">
+      <h1 class="text-2xl font-bold mb-6 text-[#1B5E57]">Add New Post</h1>
+
+      <form id="addPostForm" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">Category</label>
+          <input
+            type="text"
+            id="category"
+            name="category"
+            required
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            required
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">First Image URL</label>
+          <input
+            type="text"
+            id="image1"
+            name="image1"
+            required
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Intro Content</label>
+          <textarea
+            id="intro_content"
+            name="intro_content"
+            rows="3"
+            required
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Content 1</label>
+          <textarea
+            id="content1"
+            name="content1"
+            rows="4"
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Quote</label>
+          <textarea
+            id="quote"
+            name="quote"
+            rows="2"
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Quote Author</label>
+          <input
+            type="text"
+            id="quote_author"
+            name="quote_author"
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Main Content</label>
+          <textarea
+            id="main_content"
+            name="main_content"
+            rows="5"
+            required
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          ></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Second Image URL</label>
+          <input
+            type="text"
+            id="image2"
+            name="image2"
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium mb-1">Final Content</label>
+          <textarea
+            id="final_content"
+            name="final_content"
+            rows="3"
+            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#1B5E57]"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-[#1B5E57] text-white py-2 px-4 rounded-md hover:bg-[#154842] transition"
+        >
+          Add Post
+        </button>
+      </form>
+
+      <p id="msg" class="mt-3 text-center font-medium"></p>
+
+      <script>
+        document
+          .getElementById("addPostForm")
+          .addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const token = localStorage.getItem("token");
+            if (!token) {
+              alert("Session expired. Please log in again.");
+              window.location.href = "signin.html";
+              return;
+            }
+
+            // Collect form values
+            const postData = {
+              category: document.getElementById("category").value.trim(),
+              title: document.getElementById("title").value.trim(),
+              image1: document.getElementById("image1").value.trim(),
+              intro_content: document
+                .getElementById("intro_content")
+                .value.trim(),
+              content1: document.getElementById("content1").value.trim(),
+              quote: document.getElementById("quote").value.trim(),
+              quote_author: document
+                .getElementById("quote_author")
+                .value.trim(),
+              main_content: document
+                .getElementById("main_content")
+                .value.trim(),
+              image2: document.getElementById("image2").value.trim(),
+              final_content: document
+                .getElementById("final_content")
+                .value.trim(),
+            };
+
+            try {
+              const res = await fetch("http://127.0.0.1:8000/posts/", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify(postData),
+              });
+
+              const msgEl = document.getElementById("msg");
+
+              if (res.ok) {
+                msgEl.innerText = "✅ Post created successfully!";
+                msgEl.classList.add("text-green-600");
+
+                // Reset form
+                document.getElementById("addPostForm").reset();
+
+                // Redirect after 2s
+                setTimeout(() => {
+                  window.location.href = "managepost.html";
+                }, 2000);
+              } else {
+                const errorData = await res.json();
+                msgEl.innerText = `❌ Error: ${
+                  errorData.detail || "Failed to create post"
+                }`;
+                msgEl.classList.add("text-red-600");
+              }
+            } catch (err) {
+              console.error("Error:", err);
+              const msgEl = document.getElementById("msg");
+              msgEl.innerText = "❌ Something went wrong. Try again.";
+              msgEl.classList.add("text-red-600");
+            }
+          });
+      </script>
+    </div>
+  </body>
+</html>
